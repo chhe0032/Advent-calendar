@@ -1,14 +1,15 @@
 body {
-  background: radial-gradient(#cee4c5 0%, #c4feab 100%);;
+  background: radial-gradient(#23530f 0%, #103500 100%);;
   font-family: sans-serif;
 }
 .wrapper {
   width: 400px;
   margin: 20px auto;
 }
-.title {
+h1 {
   font-size: 1.5rem;
   text-align: center;
+  color: #fff;
 }
 ul#adventDoors {
 	position: relative;
