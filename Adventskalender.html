@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+
+	  	<!-- Mobile-friendly viewport -->
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	   	<!-- Style sheet link -->
+		<link rel="stylesheet" href="style.css" media="all">
+		<link rel="icon" href="favicon.ico">
+		<link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32x32.png">
+
+	</head>
+
+	<body>
+
+		<div class="wrapper">
+			<h1>Adventskalender</h1>
+			<img src="images/background.jpg" alt="Advent Calendar" width="1370" height="685" id="adventCal">
+			<ul id="adventDoors"></ul>
+
+		<div id="modal">
+		<div id="modal-content">
+			<button id="modal-close">×</button>
+			<h2 id="modal-title"></h2>
+			<div id="modal-difficulty"></div>
+			<p id="modal-text"></p>
+		</div>
+		</div>
+			
+		<script src="scripts/calendar.js"></script>
+		
+	</body>
+</html>

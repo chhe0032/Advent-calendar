@@ -1,45 +1,162 @@
+/* ==== Global Look ==== */
 body {
-  background: radial-gradient(#23530f 0%, #103500 100%);;
-  font-family: sans-serif;
+  background: radial-gradient(#23530f 0%, #103500 100%);
+  font-family: "Inter", sans-serif;
+  margin: 0;
+  padding: 0;
 }
+
 .wrapper {
-  width: 400px;
-  margin: 20px auto;
-}
-h1 {
-  font-size: 1.5rem;
+  position: relative;
+  width: 1370px; /* Same as image width */
+  margin: 100px auto;
   text-align: center;
-  color: #fff;
 }
+
+h1 {
+  font-size: 1.8rem;
+  text-align: center;
+  color: #ffffff;
+  text-shadow: 0 0 6px rgba(255,255,255,0.4);
+  letter-spacing: 1px;
+  margin-bottom: 18px;
+  position: absolute;
+  top: -60px; /* Adjust this value to position above the image */
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+}
+
+/* ==== Doors ==== */
 ul#adventDoors {
-	position: relative;
-	list-style: none;
-	padding: 0;
-	margin: 0;
+  position: relative;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  width: 1370px; /* Same as image width */
+  height: 685px; /* Same as image height */
 }
+
 #adventDoors li {
-	position: absolute;
+  position: absolute;
 }
+
 #adventDoors li a {
-	color: #fff;
-	width: 100%;
-	height: 100%;
-	font-size: 24px;
-	text-align: center;
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	text-decoration: none;
-	border: 1px #fff solid;
+  color: #fff;
+  width: 100%;
+  height: 100%;
+  font-size: 26px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-decoration: none;
+  border: 1px solid rgba(255,255,255,0.6);
+  border-radius: 10px;
+
+  /* High-end frosted glass look */
+  background: rgba(255,255,255,0.08);
+  backdrop-filter: blur(5px);
+
+  transition: all 0.25s ease;
+  box-shadow: 0 0 8px rgba(255,255,255,0.15);
 }
+
+/* Hover animation: soft glow + subtle scale */
 #adventDoors li a:not(.disabled):hover {
-	color: #fff;
-	background-color: transparent;
-	background-color: rgba(255,255,255,0.15);
+  background-color: rgba(255,255,255,0.18);
+  transform: scale(1.07);
+  border-color: #fff;
+  box-shadow: 0 0 14px rgba(255,255,255,0.35);
 }
+
+/* Disabled doors */
 #adventDoors li a.disabled {
-	border-color: #b6fe98;
-	background-color: rgba(196,254,171,0.15);
-	color: #b6fe98;
-	cursor: default;
+  border-color: #b6fe98;
+  background: rgba(196,254,171,0.12);
+  color: #ffffff;
+  cursor: default;
+  backdrop-filter: blur(2px);
+  opacity: 0.8;
+  box-shadow: none;
 }
+
+/* ==== Modal (Message Window) ==== */
+#modal {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.55);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  backdrop-filter: blur(3px);
+}
+
+#modal.open {
+  display: flex;
+}
+
+#modal-content {
+  background: rgba(255,255,255,0.12);
+  backdrop-filter: blur(12px);
+  border-radius: 12px;
+  padding: 25px 30px;
+  width: 90%;
+  max-width: 430px;
+
+  border: 1px solid rgba(255,255,255,0.35);
+  box-shadow: 0 0 18px rgba(0,0,0,0.45);
+  color: #fff;
+  position: relative;
+}
+
+/* Close button */
+#modal-close {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  background: rgba(255,255,255,0.15);
+  color: #fff;
+  border: none;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  font-size: 20px;
+  cursor: pointer;
+  backdrop-filter: blur(4px);
+  transition: 0.2s;
+}
+
+#modal-close:hover {
+  background: rgba(255,255,255,0.25);
+}
+
+/* Message title */
+#modal-title {
+  font-size: 1.4rem;
+  margin-top: 0;
+  margin-bottom: 10px;
+  font-weight: 600;
+  text-shadow: 0 0 4px rgba(255,255,255,0.2);
+}
+
+/* Difficulty row */
+#modal-difficulty {
+  margin-bottom: 12px;
+  font-size: 1rem;
+}
+
+#modal-difficulty .stars {
+  font-size: 1.2rem;
+  color: #ffd700;
+  letter-spacing: 2px;
+}
+
+/* Long text area */
+#modal-text {
+  font-size: 1rem;
+  line-height: 1.45;
+  white-space: pre-line;
+}
+
